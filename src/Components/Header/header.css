@@ -1,0 +1,21 @@
+header {
+  background-color: LightGray;
+  font-size: 15px;
+  padding: 10px;
+  color: black;
+  margin-left: 70px;
+  margin-top: -8px;
+  width: 1850px;
+
+  display: flex;
+  justify-content: space-between; /* Separa os itens */
+  align-items: center;            /* Alinha verticalmente */
+}
+
+button {
+  background-color: DodgerBlue;
+  padding: 10px;
+  font-size: 15px;
+  color: black;
+  border-radius: 5px;
+}
