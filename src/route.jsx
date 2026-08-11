@@ -12,7 +12,6 @@ const Routes = () => {
     return (
         <BrowserRouter>
             <Route Component={CadastroEstoque} path="/src/Components/Formulario-CadastrarEstoque/CadastrarEstoque.jsx" exact />
-            <Route Component={FiltrarData} path="/src/Components/Modal-FiltroData/filtroData.jsx" exact />
         </BrowserRouter>
     )
 }

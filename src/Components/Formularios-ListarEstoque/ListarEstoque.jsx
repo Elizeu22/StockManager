@@ -1,9 +1,12 @@
 
 import './ListarEstoque.css'
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import FiltrarData from '../Modal-FiltroData/filtroData'
 
 function ListarEstoque() {
-  const navigateFiltro = useNavigate();
+
+
+  const [mostrarFiltro, setMostrarFiltro] = useState(false);
 
   return (
     <section>
@@ -20,7 +23,8 @@ function ListarEstoque() {
       </div>
 
       <div className="containerButton02">
-        <button type="button" className="btn btn-outline-primary" onClick={() => navigateFiltro("/filtro-Data")}>&#128197; Filtro por data</button>
+        <button type="button" className="btn btn-outline-primary" onClick={() => setMostrarFiltro(!mostrarFiltro)}>&#128197; Filtro por data</button>
+        {mostrarFiltro && <FiltrarData />}
       </div>
 
 

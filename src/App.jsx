@@ -8,7 +8,6 @@ import Header from './Components/Header/header'
 import Section from './Components/Section/section'
 import NavBar from './Components/NavBar/navbar'
 import CadastroEstoque from './Components/Formulario-CadastrarEstoque/CadastrarEstoque'
-import FiltrarData from './Components/Modal-FiltroData/filtroData'
 import FormListarEstque from './Components/Formularios-ListarEstoque/ListarEstoque'
 
 
@@ -31,7 +30,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cadastro-estoque" element={<CadastroEstoque />} />
-        <Route path="/filtro-Data" element={<FiltrarData />} />
       </Routes>
     </BrowserRouter>
   );
