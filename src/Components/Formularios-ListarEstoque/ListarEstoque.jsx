@@ -2,11 +2,14 @@
 import './ListarEstoque.css'
 import { useState } from 'react';
 import FiltrarData from '../Modal-FiltroData/filtroData'
+import RangeData from '../Modal-RangeData/rangeData'
 
 function ListarEstoque() {
 
 
   const [mostrarFiltro, setMostrarFiltro] = useState(false);
+
+  const [mostrarRangeData, setMostrarRangeData] = useState(false);
 
   return (
     <section>
@@ -29,7 +32,8 @@ function ListarEstoque() {
 
 
       <div className="containerButton03">
-        <button type="button" className="btn btn-outline-primary">&#128200; Filtro por periodo</button>
+        <button type="button" className="btn btn-outline-primary" onClick={() => setMostrarRangeData(!mostrarRangeData)}>&#128200; Filtro por periodo</button>
+        {mostrarRangeData && <RangeData />}
       </div>
 
       <div className="containerTable">
