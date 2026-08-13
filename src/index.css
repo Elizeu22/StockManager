@@ -1,0 +1,8 @@
+body {
+    margin: 0;
+    background-image: url("./assets/3413468.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

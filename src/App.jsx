@@ -6,7 +6,6 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './Components/Header/header'
 import Section from './Components/Section/section'
-import NavBar from './Components/NavBar/navbar'
 import CadastroEstoque from './Components/Formulario-CadastrarEstoque/CadastrarEstoque'
 import FormListarEstque from './Components/Formularios-ListarEstoque/ListarEstoque'
 
@@ -18,7 +17,6 @@ function Home() {
     <div>
       <Header />
       <Section />
-      <NavBar />
       <FormListarEstque />
     </div>
   );

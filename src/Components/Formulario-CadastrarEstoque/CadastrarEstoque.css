@@ -5,9 +5,9 @@
     width: 870px;
     height: 600px;
     border-radius: 5px;
-    margin-top: 200px;
     margin-left: 500px;
     border-style: groove;
+    margin-top: 200px;
 }
 
 .containerCadastrarEstoque {

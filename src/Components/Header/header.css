@@ -3,13 +3,14 @@ header {
   font-size: 15px;
   padding: 10px;
   color: black;
-  margin-left: 70px;
   margin-top: -8px;
-  width: 1850px;
+  width: 1920px;
 
   display: flex;
-  justify-content: space-between; /* Separa os itens */
-  align-items: center;            /* Alinha verticalmente */
+  justify-content: space-between;
+  /* Separa os itens */
+  align-items: center;
+  /* Alinha verticalmente */
 }
 
 button {
