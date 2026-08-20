@@ -1,8 +1,8 @@
 
 import './ListarEstoque.css'
-import { useState } from 'react';
 import FiltrarData from '../Modal-FiltroData/filtroData'
 import RangeData from '../Modal-RangeData/rangeData'
+import React, { useState, useEffect } from 'react';
 
 function ListarEstoque() {
 
@@ -10,6 +10,42 @@ function ListarEstoque() {
   const [mostrarFiltro, setMostrarFiltro] = useState(false);
 
   const [mostrarRangeData, setMostrarRangeData] = useState(false);
+
+  const [produtos, setProdutos] = useState([]);
+
+  const [carregando, setCarregando] = useState(true);
+
+
+  useEffect(() => {
+    const listarProdutos = async () => {
+      try {
+        const resposta = await fetch(
+          'https://localhost:7154/produtos?pagina=1&tamanho=10'
+        );
+
+        console.log("Status:", resposta.status);
+
+        if (!resposta.ok) {
+          throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        const dados = await resposta.json();
+
+        console.log("Dados recebidos:", dados);
+        console.log("É array?", Array.isArray(dados));
+
+        setProdutos(dados);
+      } catch (erro) {
+        console.error('Erro ao listar os produtos:', erro);
+      } finally {
+        setCarregando(true);
+      }
+    };
+
+    listarProdutos();
+  }, []);
+
+
 
   return (
     <section>
@@ -41,26 +77,33 @@ function ListarEstoque() {
           <table className="table">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Age</th>
-                <th>City</th>
-                <th>Country</th>
-                <th>Sex</th>
-                <th>Example</th>
-                <th>Example</th>
-                <th>Example</th>
-                <th>Example</th>
+                <th>ID</th>
+                <th>NOME</th>
+                <th>DESCRICAO</th>
+                <th>PRECO</th>
+                <th>QUANTIDADE ESTOQUE</th>
+                <th>DATA CADASTRO</th>
               </tr>
             </thead>
+            <tbody>
+              {produtos.map((produto) => {
+                return (
+                  <tr key={produto.id}>
+                    <td>{produto.id}</td>
+                    <td>{produto.nome}</td>
+                    <td>{produto.descricao}</td>
+                    <td>{produto.preco}</td>
+                    <td>{produto.quantidadeEstoque}</td>
+                    <td>{produto.dataCadastro}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
         </div>
       </div>
     </section>
-
-
-  )
+  );
 }
 
 
